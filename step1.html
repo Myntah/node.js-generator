@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JAvatar generator</title>
+  </head>
+  <body>
+
+    <img alt ="Avatar" id="avatar">
+
+    <script type="text/javascript">
+
+      function GenerateAvatar(
+      text,
+      foregroundColor = "White",
+      backgroundColor = "Black"
+      ){
+
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+
+        convas.width = 400;
+        canvas.height = 400;
+
+        // Draw background
+        context.fillStyle = backgroundColor;
+        context.fillRect(0,0, canvas.width, canvas.height);
+
+
+        //Draw text
+        context.font = "bold 100px Assistant";
+        context.fillStyle = foregroundColor;
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+
+
+        document.body.appendChild(canvas);
+
+      }
+
+      GenerateAvatar("DC", "White", "#009578");
+
+
+    </script>
+  </body>
+</html>
